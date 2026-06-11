@@ -56,11 +56,11 @@ button {
   transition: 0.3s;
 }
 
-button:first-child {
+.aprovar{
   background-color: #4caf50;
   color: white;
 } /* Aprovar */
-button:last-child {
+.recusar{
   background-color: #f44336;
   color: white;
   margin-left: 5px;

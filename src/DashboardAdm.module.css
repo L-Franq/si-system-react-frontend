@@ -1,18 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "PT Sans", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
 }
 
-:root{
-    --bg: #333;
-    --txt: #888;
-    --any: whitesmoke;
+:root {
+  --bg: #333;
+  --txt: #888;
+  --any: whitesmoke;
 }
 
-.pai{
-    background-color: var(--any);
+.pai {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--any);
+  overflow: hidden;
+}
+
+.conteudoPrincipal {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.boasVindas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #444;
+  text-align: center;
+}
+
+.boasVindas h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.boasVindas p {
+  color: var(--txt);
+  font-size: 1.1rem;
 }

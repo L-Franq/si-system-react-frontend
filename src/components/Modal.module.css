@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sav: #4caf50;
+  --edi: #466985;
+  --del: #f44336;
+  --bg: #333;
+  --txt: #888;
+  --any: whitesmoke;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.mae {
+  width: 510px;
+  min-height: 410px;
+  border: 3px double var(--txt);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  flex-direction: column;
+  background-color: var(--bg);
+}
+
+.buscar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+  margin: 8px;
+  padding: 8px;
+}
+
+.buscar input {
+  width: 100%;
+  outline-color: var(--edi);
+  color: var(--txt);
+  font-weight: 600;
+  font-size: 15px;
+  border: 2px double var(--txt);
+  padding: 5px 5px 5px 10px;
+  border-radius: 5px;
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+}
+
+.controles button {
+  margin: 10px;
+  flex: 1;
+  height: 40px;
+  color: var(--any);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.salvar {
+  background-color: var(--sav);
+}
+.editar {
+  background-color: var(--edi);
+}
+.deletar {
+  background-color: var(--del);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.fechar {
+  background-color: transparent;
+  border: none;
+  color: var(--del);
+  font-weight: bold;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.campos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.campos input {
+  margin: 8px 0;
+  width: 48%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid var(--txt);
+  outline-color: var(--edi);
+}
