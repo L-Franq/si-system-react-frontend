@@ -16,8 +16,6 @@ function AsideDashboard({ onCliqueBotao, onCliqueValidar }) {
         </div>
 
         <div className={styles.menu}>
-          <button className={styles.button}>perfil</button>
-
           <button className={styles.button} onClick={onCliqueValidar}>
             Validar Professores
           </button>

@@ -5,8 +5,6 @@ import Login from "./Login";
 import Cadastro from "./Cadastro";
 import DashboardAdm from "./DashboardAdm";
 import DashboardProf from "./DashboardProf";
-import FormList from "./FormList";
-import Modal from "./components/Modal";
 
 function App() {
   return (
@@ -18,10 +16,6 @@ function App() {
       <Route path="/dashprof" element={<DashboardProf />} />
 
       <Route path="/dashadm" element={<DashboardAdm />} />
-
-      <Route path="/form" element={<FormList />} />
-
-      <Route path="/modal" element={<Modal />} />
     </Routes>
   );
 }

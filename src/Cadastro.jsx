@@ -27,7 +27,7 @@ function Cadastro() {
     }
   }
 
-  const [nome, setNome] = useState("Undefined");
+  const [nome, setNome] = useState("");
   const [tel, setTel] = useState();
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
