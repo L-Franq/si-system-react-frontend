@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PT Sans", sans-serif;
+}
+
+:root{
+    --bg: #333;
+    --txt: #888;
+    --any: whitesmoke;
+}
+
+.logout{
+    color: var(--any);
+    border-radius: 10px;
+    border: 2px solid tomato;
+    min-width: 200px;
+    padding: 10px;
+    margin: 55px 8px 8px 8px;
+    cursor: pointer;
+    transform: none;
+    transition: transform ease 0.3s;
+    font-weight: 700;
+    background-color: transparent;
+    transition: background-color ease 0.3s;
+}
+
+.logout:hover{
+    background-color: tomato;
+    transform: scale(1.04);
+}
