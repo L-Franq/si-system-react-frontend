@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Falta.module.css";
 import table from "../FormList.module.css";
 
@@ -6,6 +6,75 @@ function GerirNotas() {
   const [etapa, setEtapa] = useState("turmas");
   const [turmaSelecionada, setTurmaSelecionada] = useState("");
   const [alunoSelecionado, setAlunoSelecionado] = useState("");
+
+  const [codigoTurma, setCodigoTurma] = useState("");
+  const [nomeAluno, setNomeAluno] = useState("");
+  const [nomeCurso, setNomeCurso] = useState("");
+  const [numerOrdem, setNumerOrdem] = useState("");
+
+  useEffect(() => {
+    async function dadosTurma() {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch("", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (response.ok) {
+          const dadosServer = await response.json();
+
+          {
+            /* coloque as chaves corretas dos objectos. esses sao meros exemplos */
+          }
+          setCodigoTurma(dadosServer.cod_turma);
+          setNomeCurso(dadosServer.nomeCurso);
+        } else {
+          setCodigoTurma("None");
+          setNomeCurso("undefined");
+        }
+      } catch (error) {
+        console.error("Falha na requisicao ", error);
+        setCodigoTurma("Erro");
+        setNomeCurso("erro");
+      }
+    }
+    dadosTurma();
+  }, []);
+
+  useEffect(() => {
+    async function dadosAluno() {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch("", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (response.ok) {
+          const dadosServer = await response.json();
+
+          {
+            /* coloque as chaves corretas dos objectos. esses sao meros exemplos */
+          }
+          setNumerOrdem(dadosServer.numer_ord);
+          setNomeAluno(dadosServer.nome);
+        } else {
+          setNumerOrdem("None");
+          setNomeAluno("undefined");
+        }
+      } catch (error) {
+        console.error("Falha na requisicao ", error);
+        setNumerOrdem("Erro");
+        setNomeAluno("Erro");
+      }
+    }
+    dadosAluno();
+  }, []);
 
   return (
     <div className={styles.mae}>
@@ -51,8 +120,8 @@ function GerirNotas() {
             </thead>
             <tbody>
               <tr>
-                <td>INF-2026</td>
-                <td>T. e Linguagens de Programacao</td>
+                <td>{codigoTurma}</td>
+                <td>{nomeCurso}</td>
                 <td>
                   <button
                     className={table.aprovar}
@@ -66,8 +135,8 @@ function GerirNotas() {
                 </td>
               </tr>
               <tr>
-                <td>MAT-2026</td>
-                <td>Contabilidade Analitica - 2º Ano</td>
+                <td>{codigoTurma}</td>
+                <td>{nomeCurso}</td>
                 <td>
                   <button
                     className={table.aprovar}
@@ -100,8 +169,8 @@ function GerirNotas() {
             </thead>
             <tbody>
               <tr>
-                <td>01</td>
-                <td>Abilio Jose</td>
+                <td>{numerOrdem}</td>
+                <td>{nomeAluno}</td>
                 <td>
                   <button
                     className={table.aprovar}
@@ -116,8 +185,8 @@ function GerirNotas() {
                 </td>
               </tr>
               <tr>
-                <td>02</td>
-                <td>Adriano da Silva Jr.</td>
+                <td>{numerOrdem}</td>
+                <td>{nomeAluno}</td>
                 <td>
                   <button
                     className={table.aprovar}

@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import ChangeTitle from "./components/ChangeTitle";
 import styles from "./Cadastro.module.css";
 import Cadastrar from "./components/GoLogin";
+import Login from "./Login";
 
 function Cadastro() {
   async function CadastarUser(e) {
@@ -22,6 +24,9 @@ function Cadastro() {
       if (response.ok) {
         alert(dadosServer.mensagem || "Cadastrado com sucesso!");
       }
+      <Routes>
+        <Route path="/" element={<Login/>}/>
+      </Routes>
     } catch (error) {
       console.error(error);
     }

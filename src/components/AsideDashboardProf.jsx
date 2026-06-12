@@ -2,10 +2,40 @@ import styles from "./AsideDashboard.module.css";
 import ChangeTitle from "./ChangeTitle";
 import DashName from "./DashName";
 import Logout from "./LogouButton";
+import { useState, useEffect } from "react";
 
 function AsideDashboardProf({ onMudarTela }) {
-  let title = "Dashboard";
-  let nome = "professor: " + " Adriano da Silva";
+
+   const [nome, setNome] = useState("");
+    let title = "Dashboard";
+  
+  useEffect(()=>{
+    async function buscarDados(){
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch("", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        });
+  
+        if(response.ok){
+          const dadosServer = await response.json();
+  
+          setNome("Professor: ", dadosServer.nome);
+        }
+        else{
+          setNome("Professor: ", "Desconhecido");
+        }
+      } catch (error) {
+        console.error("Falha na requisicao ", error);
+        setNome("Professor: ", "Erro ao Carregar");
+      }
+    }
+    buscarDados();
+  }, []);
+  
   
   return (
     <>

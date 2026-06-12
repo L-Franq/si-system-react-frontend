@@ -46,6 +46,8 @@ function DashboardAdm() {
       >
         {tipoForm === "disciplina" && (
           <>
+            {/*Irmao, usa a sintaxe da requisicoes em outros ficheiros. 
+            use o valor do usestate no value de cada input */}
             <input type="text" placeholder="Nome da Disciplina" />
             <input type="text" placeholder="Carga Horária" />
             <input type="text" placeholder="Código do Curso" />
